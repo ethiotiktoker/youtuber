@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="pic.jpg/1.png">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style> 
+    .bbbs{
+margin-left: 10px;
+margin-right: 10px;
+overflow: scroll;
+    }
+    .wrapper {
+height: 56px;
+background: #343a40;
+}
+nav {
+  height: 56px;
+  background: #343a40;
+  box-shadow: 0 5px 10px rgb(188, 180, 180);
+}
+nav ul {
+  display: flex;
+  height: 44px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+nav a {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: lighter;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+nav a:hover {
+  color: #343a40;
+  border-radius: 100px;
+  font-size: 20px;
+  background-color:#fff;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffff; 
+}
+.form{
+    width: 500px;
+    padding: 6px;      
+}
+input,textarea{
+    width: 100%;
+    padding: 6px;
+    outline: none;
+    border: 1px solid #343a40;
+    margin: 6px 0px;
+    border-radius: 20px ;
+    color: #343a40;
+}
+#btn{
+    color: #fff;
+    background-color: #343a40;
+    width: 110px;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+  </style>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <nav>
+              <ul>
+                <li><a href="tiktok.html" style="font-size: 20px;"><i class="fa-brands fa-tiktok fa-fade" style="color: #dfe7e7 bg-black"></i></a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+        <div class="form">
+             <form  method="post">
+                <input type="text" placeholder="Name" id="name" autocomplete="off">
+                <input type="email" placeholder="Email" id="email" autocomplete="off" >
+                <input type="text" placeholder="subject" id="subject" autocomplete="off">
+                <textarea  id="message" placeholder="Message" cols="30" rows="10"></textarea>
+                <button id="btn">Send</button>
+             </form>
+          <script src="https://smtpjs.com/v3/smtp.js"></script>
+          <script>
+             var btn = document.getElementById('btn');
+             btn.addEventListener('click' , function(e) {
+              e.preventDefault()
+              var name = document.getElementById('name').value;
+              var email = document.getElementById('email').value;
+              var subject = document.getElementById('subject').value;
+              var message = document.getElementById('message').value;
+              var body = 'name: '+name + '<br/> email: ' + email + '<br/>  subject: ' +subject + '<br/> message: '+ message;
+                            
+                            Email.send({
+                          SecureToken : "cbd77f5a-cd60-4154-8b9a-f248102292de",
+                          To : 'abdigemechu919@gmail.com',
+                          From : "abdiwarku549@gmail.com",
+                          Subject : "contact message",
+                          Body : body
+                      }).then(
+                        message => alert(message)
+                      );
+             })
+          </script>
+          </div>
+        </div>
+      </section>
+    </main>
+      <!-- thise part is footer -->
+
+      <hr style=" border: 1px solid black;">
+      <footer>
+            <style>
+              .footer {
+                /* border: 2px solid black; */
+                position: relative;
+                bottom: 0;
+                left: 0;
+                color: black;
+                text-align: center;
+                line-height: 50px; 
+              }
+            </style>
+            <div class="footer">
+              <div class="abc">
+                    <!-- <a href="" style="display: block;color: #0084ff;">&nbsp;&nbsp;Facebook</a> -->
+                    <a href="" style="display: block;color: #25d366;">What's app</a>
+                    <a href="" style="display: block;color:#0088cc;">Telegram</a>
+                    <a href="" style="display: block;color: #c32aa3;">Instagram</a>
+                    <a href="" style="display: block;color: #0084ff;">Facebook</a>
+                    <i class="fa-solid fa-phone fa-beat" >+251912193011</i>
+     
+              </div>
+              <p>© EAIA 2024</p>
+            </div>
+           
+</body>
+</html>
